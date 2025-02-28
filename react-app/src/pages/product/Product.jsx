@@ -3,12 +3,11 @@ import { IoHomeOutline } from "react-icons/io5";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { Link } from "react-router-dom";
 import TopProduct from "./TopProduct";
-import Nav from "../../components/header/nav";
+import Category from "./Category";
 
 const Product = () => {
   return (
     <div className="relative min-h-fit ">
-
       {/* <Nav /> */}
       {/* Header Section */}
       <div className="absolute font-ribeye flex flex-col items-center top-12 md:left-80 left-20 lg:left-[40%] text-white z-10">
@@ -45,6 +44,7 @@ const Product = () => {
           the market.
         </p>
       </div>
+      <Category />
       <TopProduct />
     </div>
   );

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FaShoppingCart, FaSlidersH, FaUser } from "react-icons/fa";
 import { IoCloseCircle } from "react-icons/io5";
 import { MdArrowDropDown } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { button } from "framer-motion/client";
 import Header from "./Header";
@@ -12,6 +12,8 @@ const Nav = () => {
   const [openDropDown, setOpenDropDown] = useState(null);
   const [prevScrollpos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
+
+  const navigate = useNavigate();
 
   const handleScroll = () => {
     const currentScrollPos = window.scrollY;
@@ -220,7 +222,11 @@ const Nav = () => {
               )}
             </button>
 
-            <button onClick={dropDown}>
+            <button
+              onClick={() => {
+                navigate("/addtocart");
+              }}
+            >
               <FaShoppingCart className="text-xl text-[#e53424] hover:text-black" />
             </button>
           </div>
